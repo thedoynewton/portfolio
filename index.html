@@ -1,0 +1,272 @@
+<?php
+//Database configuration
+$dbHost     = "localhost:3307";
+$dbUsername = "root";
+$dbPassword = "";
+$dbName     = "login_db";
+
+//Create database connection
+$conn = mysqli_connect($dbHost, $dbUsername, $dbPassword, $dbName);
+
+//Check connection
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body>
+  <!----------------------------------------------------------------------------------->
+  <div class="perspective effect-rotate-left">
+    <div class="container">
+      <div id="viewport" class="l-viewport">
+        <div class="l-wrapper">
+
+          <!--      HEADER      -->
+          <header class="header">
+            <a class="header--logo" href="#0">
+              <img src="img/logo.png" alt="Logo">
+              <p>Dadoy</p>
+            </a>
+            <div class="header--nav-toggle">
+              <span></span>
+            </div>
+          </header>
+          <!----------------------------------------------------------------------------------->
+
+          <!--      SIDE NAV      -->
+          <nav class="l-side-nav">
+            <ul class="side-nav">
+              <li class="is-active"><span>Home</span></li>
+              <li><span>Works</span></li>
+              <li><span>About</span></li>
+              <li><span>Skills</span></li>
+              <li><span>Contact</span></li>
+              <li><span>Sign In</span></li>
+            </ul>
+          </nav>
+          <!----------------------------------------------------------------------------------->
+
+          <ul class="l-main-content main-content">
+
+            <!--      HOME      -->
+            <li class="l-section section section--is-active">
+              <div class="intro">
+                <div class="intro--banner">
+                  <h1>EAT,<br>SLEEP,<br> <span class="highlight">CODE.</span></h1>
+                  <img src="img/me.png" alt="Welcome">
+                </div>
+                <div class="intro--options">
+
+                  <div class="info">
+                    <h3>DISCOVER MORE</h3>
+                    <a href="https://www.facebook.com/Diosdado04"><img src="img/facebook.png" alt=""></a>
+                    <a href="https://www.instagram.com/diosdado_ramos/"><img src="img/instagram.png" alt=""></a>
+                    <a href="https://discord.gg/PQmZu4tx"><img src="img/discord.png" alt=""></a>
+                    <a href="https://mail.google.com/mail/u/1/#inbox?compose=CllgCJlHmqmcZchTQkdmhsQPVfXJHbpKzHgRKDVlNFlhdHNhTtndjzTVGGnfrdfVGPScmrwqRSB"><img src="img/gmail.png" alt=""></a>
+                  </div>
+
+                  <div class="info">
+                    <h3>PERSONAL INFO</h3>
+                    <p><span>Birthdate</span>: 01/05/03</p>
+                    <p><span>Email</span>: ditramos02083@usep.edu.ph</p>
+                    <p><span>Phone</span>: 0998-339-0455</p>
+                    <p><span>Address</span>: Purok 3 Bucaran, Toril Babak district IGACoS</p>
+                  </div>
+
+                  <div class="info">
+                    <h3>MY EXPERTISE</h3>
+                    <p><span>Video Editing</span></p>
+                    <p><span>Prototyping</span></p>
+                    <p><span>Web development</span></p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!----------------------------------------------------------------------------------->
+
+            <!--      WORKS SECTION      -->
+            <li class="l-section section">
+              <div class="work">
+                <h1>MY WORKS</h1>
+                <div class="work--lockup">
+                  <ul class="slider">
+                    <li class="slider--item slider--item-left">
+                      <a href="#">
+                        <div class="slider--item-image">
+                          <img src="img/v-bg.png" alt="video">
+                        </div>
+                        <p class="slider--item-title">Videos</p>
+                        <a href="https://drive.google.com/drive/folders/1UmNOS15COJnBH6tjSbinvvvUVag1O9Sx?usp=sharing">View
+                          more</a>
+                      </a>
+                    </li>
+                    <li class="slider--item slider--item-center">
+                      <a href="#">
+                        <div class="slider--item-image">
+                          <img src="img/p-bg.png" alt="Metiew and Smith">
+                        </div>
+                        <p class="slider--item-title">Prototypes</p>
+                        <a href="https://www.figma.com/files/project/88046246">View
+                          more</a>
+                      </a>
+                    </li>
+                    <li class="slider--item slider--item-right">
+                      <a href="#">
+                        <div class="slider--item-image">
+                          <img src="img/w-bg.png" alt="Alex Nowak">
+                        </div>
+                        <p class="slider--item-title">Web projects</p>
+                        <a href="https://drive.google.com/drive/folders/123T43-sqev_0QqK0aHiv0OcTSU4aVsDu?usp=share_link">View
+                          more</a>
+                      </a>
+                    </li>
+                  </ul>
+                  <!--      SLIDE PREVIOUS     -->
+
+                  <div class="slider--prev">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                      <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                        <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z" />
+                      </g>
+                    </svg>
+                  </div>
+                  <!--      SLIDE PREVIOUS     -->
+
+                  <!--      SLIDE NEXT     -->
+                  <div class="slider--next">
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                      <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                        <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z" />
+                      </g>
+                    </svg>
+                  </div>
+                  <!--      SLIDE NEXT     -->
+                </div>
+              </div>
+            </li>
+            <!----------------------------------------------------------------------------------->
+
+            <!--      ABOUT SECTION    -->
+            <li class="l-section section">
+              <div class="about">
+                <div class="about--banner">
+                  <h2>Hello, I'm <br>
+                    <span>DIOSDADO ISAAC RAMOS</span>
+                  </h2>
+                  <p class=".font-size-L">I am currently a 2nd year college student a Bachelor of Science in technology Major in Business Technology Management. I really love to explore new things, it helps me to discover what others know that I don't. It also helps me building my knowledge and skills through trying things to gain experience and learnings.</p>
+                  <img src="img/about.png" alt="About Us">
+                  <a href="myResume.pdf">
+                    <button class="btn">Download CV
+                      <span class="btn-background"></span>
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </li>
+            <!----------------------------------------------------------------------------------->
+
+            <!--      SKILLS SECTION      -->
+            <li class="l-section section">
+              <div class="skills">
+                <div class="skills--lockup">
+
+                  <?php
+                  $sql = "SELECT * FROM skills";
+                  $result = mysqli_query($conn, $sql);
+                  if (mysqli_num_rows($result) > 0) {
+
+                    while ($row = mysqli_fetch_assoc($result)) {
+                  ?>
+                      <div class="skills-modal">
+                        <h3><?php echo $row['skill_name']; ?></h3>
+                        <h4><?php echo $row['skill_level']; ?></h4>
+                      </div>
+                  <?php
+                    }
+                  }
+                  ?>
+
+                </div>
+              </div>
+            </li>
+            <!----------------------------------------------------------------------------------->
+
+            <!--      CONTACT SECTION      -->
+            <li class="l-section section">
+              <div class="contact" id="contact">
+                <div class="contact--lockup">
+                  <div class="cntc-modal">
+                    <h1>Get in touch</h1>
+
+                    <form action="add_message.php" method="post">
+                      <input type="text" name="username" class="feedback-input" placeholder="Username">
+                      <input type="text" name="email" class="feedback-input" placeholder="Email">
+                      <input type="text" name="subject" class="feedback-input" placeholder="Subject">
+                      <textarea type="text" name="message" class="feedback-input" placeholder="Message"></textarea>
+                      <button onclick="myFunction()" type="submit" name="insert_contact">Submit</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Sign in section -->
+            <li class="l-section section">
+              <div class="signin">
+                <div class="signin--lockup">
+                  <div class="card">
+                    <img src="img/login.png" alt="Sign in">
+                    <button type="submit"><a href="login_page.php">LOGIN</a></button>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <!----------------------------------------------------------------------------------->
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!--      OUTER NAV      -->
+    <ul class="outer-nav">
+      <li class="is-active">Home</li>
+      <li>Works</li>
+      <li>About</li>
+      <li>Skills</li>
+      <li>Contact</li>
+      <li>Sign In</li>
+    </ul>
+    <!----------------------------------------------------------------------------------->
+  </div>
+
+  <section class="footer">
+    <div class="credits"> Created by <span>Diosdado Isaac Ramos</span> | all rights reserved </div>
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/vendor/jquery-2.2.4.min.js"><\/script>')
+  </script>
+  <script src="js/functions-min.js"></script>
+  <script>
+    function myFunction() {
+      alert("Message sent");
+    }
+  </script>
+</body>
+
+</html>
