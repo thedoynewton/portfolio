@@ -489,13 +489,9 @@ input {
 
 .intro--options {
   display: flex;
-  justify-content: space-between;
-  justify-content: space-between;
   margin: 0;
   padding: 0;
   list-style: none;
-  padding-left: 3rem;
-  padding-right: 3rem;
 }
 
 .intro--options .info {
@@ -519,9 +515,6 @@ input {
 /* PROJECTS SECTION */
 .work {
   position: relative;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
   width: 960px;
   max-width: 80%;
@@ -799,7 +792,7 @@ input {
 /* ----------------------------------------------------------------------------------- */
 
 /* CONTACT */
-.contact h1{
+.contact h1 {
   margin: 3rem 0 2rem 0;
   font-size: 3rem;
   font-weight: 900;
@@ -808,7 +801,7 @@ input {
 
 form {
   max-width: 30rem;
-  margin:  auto;
+  margin: auto;
   background-color: white;
   box-shadow: -0.6rem 0.6rem 0 rgba(250, 250, 250, 0.26);
   border-radius: 1rem;
@@ -875,18 +868,14 @@ textarea {
 .outer-nav {
   position: absolute;
   top: 50%;
-  left: 55%;
-  -webkit-transform: translateY(-50%);
+  left: 50%;
   transform: translateY(-50%);
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
   margin: 0;
   padding: 0;
   list-style: none;
   text-align: center;
   visibility: hidden;
-  -webkit-transition: visibility 0s .2s;
-  transition: visibility 0s .2s;
+  text-align: justify;
 }
 
 .outer-nav.is-vis {
@@ -1012,8 +1001,7 @@ textarea {
 
 /* FOOTER */
 .footer {
-  text-align: center;
-  color: white;
+  position: absolute;
 }
 
 /* ----------------------------------------------------------------------------------- */
@@ -1027,12 +1015,7 @@ textarea {
 
 /* MEDIA QUERIES */
 
-/*1180px  */
-@media (max-width: 1180px) {
-  .l-side-nav {
-    display: none;
-  }
-
+@media (max-width: 1440px) {
   .intro {
     max-width: 100%;
   }
@@ -1042,19 +1025,52 @@ textarea {
   }
 
   .about {
-    max-width: 100%;
+    max-width: 80%;
   }
 
   .contact--lockup {
     max-width: 100%
   }
 
+  .intro--banner img {
+    width: 45%;
+  }
+
+.intro--options{
+  justify-content: space-between;
 }
 
-/* 900px */
-@media (max-width: 900px) {
+  .contact h1 {
+    margin: 3rem 0 0 0;
+  }
+
+  form {
+    max-width: 50%;
+  }
+
+  textarea {
+    height: 8rem;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0rem;
+    left: 30rem;
+  }
+}
+
+@media (max-width: 1024px) {
   .intro--banner {
     height: 23.75rem;
+  }
+
+  .intro--banner h1 {
+    position: relative;
+    margin: 5rem;
+    font-size: 68px;
+    font-weight: 900;
+    line-height: 1;
+    z-index: 1;
   }
 
   .intro--banner h1 {
@@ -1062,7 +1078,13 @@ textarea {
   }
 
   .intro--banner img {
-    width: 26.9rem;
+    width: 25rem;
+  }
+
+  .intro--options {
+    padding-left: 3rem;
+    padding-right: 3rem;
+    justify-content: space-between;
   }
 
   .intro--options>a {
@@ -1073,14 +1095,12 @@ textarea {
     margin-right: 0;
   }
 
-  .work--lockup .slider--item-image {
-    width: 20%;
-    height: 20%;
+  .about--banner img {
+    top: 1rem;
   }
 
-  .work--lockup .slider--item-center .slider--item-image {
-    width: 20%;
-    height: 20%;
+  .work {
+    max-width: 90%;
   }
 
   .work--lockup .slider--next,
@@ -1088,11 +1108,18 @@ textarea {
     top: 130px;
   }
 
+  .card {
+    max-width: 30%;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0rem;
+    left: 18rem;
+  }
 }
 
-/* 767px */
-@media (max-width: 767px) {
-
+@media (max-width: 768px) {
   .header--cta {
     display: none;
   }
@@ -1106,9 +1133,16 @@ textarea {
   }
 
   .intro--banner img {
-    display: none;
+    width: 24rem;
   }
 
+  .intro--banner::before {
+    left: 8px;
+  }
+
+  .intro--options {
+    padding: 0;
+  }
 
   .work--lockup .slider {
     width: 75%;
@@ -1130,7 +1164,9 @@ textarea {
   }
 
   .about--banner {
-    height: 305px;
+    height: 30rem;
+    position: relative;
+    height: 475px;
   }
 
   .about--banner::before {
@@ -1144,8 +1180,13 @@ textarea {
   }
 
   .about--banner h2 {
-    margin-top: 10px;
-    font-size: 44px;
+    position: relative;
+    margin-top: 3rem;
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    z-index: 1;
+
   }
 
   .about--banner h2::before {
@@ -1175,6 +1216,10 @@ textarea {
     width: auto;
   }
 
+  .side-nav {
+    display: none;
+  }
+
   .outer-nav>li {
     font-size: 44px;
   }
@@ -1192,12 +1237,44 @@ textarea {
   }
 
   .card {
-    max-width: 45%;
+    max-width: 35%;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0rem;
+    left: 10.5rem;
   }
 }
 
-/* 600px */
-@media (max-width: 650px) {
+@media (max-width: 425px) {
+  .contact h1 {
+    margin-top: 5rem;
+    font-size: 2rem;
+  }
+
+textarea{
+  height:4rem;
+}
+
+  form {
+    max-width: 70%;
+  }
+
+  .about--banner h2 {
+    position: relative;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1;
+    z-index: 1;
+  }
+
+  .work h1 {
+    margin: 0;
+    font-size: 3rem;
+  }
+
   .work--lockup .slider {
     width: auto
   }
@@ -1206,72 +1283,37 @@ textarea {
   .work--lockup .slider--item-right {
     display: none
   }
-
-  .work-request--options {
-    margin: 20px 0
-  }
-
-  .work-request--options label {
-    width: 150px;
-    margin-bottom: 15px;
-    font-size: 14px
-  }
-
-  .work-request--options input[type="checkbox"]:checked+label svg {
-    width: 12px
-  }
-
-  .work-request--information {
-    margin-bottom: 30px
-  }
-
-  .work-request--information .information-name,
-  .work-request--information .information-email {
-    height: 40px;
-    font-size: 24px
-  }
-
+  
   .intro--banner {
     height: 360px
   }
 
   .intro--banner h1 {
-    font-size: 55px
+    font-size: 3rem;
+    margin: 7rem 0 0 .8rem;
   }
 
   .intro--banner img {
-    display: none
+    width: 70%;
+    left: 7rem;
   }
 
-  .about--banner {
-    height: auto
+  .intro--options{
+    justify-content: space-between;
   }
 
-  .about--banner::before {
-    left: 155px
+  .info h3{
+    width: 5rem;
+    font-size: .9rem;
   }
 
-  .about--banner::after {
-    left: 310px
+  .info p{
+    font-size: .8rem;
   }
 
-  .about--banner h2 {
-    margin-top: 0;
-    font-size: 55px
-  }
-
-  .about--banner h2::before {
-    top: 43px;
-    left: 214px
-  }
-
-  .about--banner h2::after {
-    top: 205px;
-    left: 205px
-  }
-
-  .about--banner img {
-    display: none
+  .info img{
+    width: 49%;
+    margin-left: 1rem;
   }
 
   .about--options {
@@ -1282,11 +1324,118 @@ textarea {
     margin: 5rem 2rem 0 7rem;
   }
 
-  .skills--lockup .skills-modal{
+  .skills--lockup .skills-modal {
     width: 21%;
   }
 
-
+  .footer {
+    position: absolute;
+    bottom: 0rem;
+    left: 2rem;
+  }
 }
+
+@media (max-width: 320px) { 
+  .contact h1 {
+    margin-top: 5rem;
+    font-size: 2rem;
+  }
+
+  .about--banner p{
+    font-size: 1rem;
+  }
+
+  form {
+    max-width: 70%;
+  }
+
+  .about--banner h2 {
+    position: relative;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    line-height: 1;
+    z-index: 1;
+  }
+
+  .work h1 {
+    margin: 0;
+    font-size: 3rem;
+  }
+
+  .work--lockup .slider {
+    width: auto
+  }
+
+  .work--lockup .slider--item-left,
+  .work--lockup .slider--item-right {
+    display: none
+  }
+  
+  .intro--banner {
+    height: 360px
+  }
+
+  .intro--banner h1 {
+    font-size: 3rem;
+    margin: 5rem 0 0 .8rem;
+  }
+
+  .feedback-input{
+    margin-bottom: 1rem;
+  }
+
+  textarea{
+    height: 4rem;
+  }
+
+  .intro--banner img {
+    width: 70%;
+    left: 7rem;
+  }
+
+  .info h3{
+    width: 5rem;
+    font-size: .9rem;
+  }
+
+  .info p{
+    font-size: .6rem;
+  }
+
+  .info img{
+    width: 49%;
+    margin-left: 1rem;
+  }
+
+  .info{
+    width: 30%;
+    border: none;
+  }
+
+  .about--options {
+    display: none
+  }
+
+  .skills--lockup {
+    margin: 5rem 2rem 0 7rem;
+  }
+
+  .skills--lockup .skills-modal {
+    width: 21%;
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 0rem;
+    left: 1rem;
+  }
+
+  .credits{
+    font-size: .7rem;
+  }
+}
+
+
 
 /* ----------------------------------------------------------------------------------- */
